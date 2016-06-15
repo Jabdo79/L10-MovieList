@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class MovieList {
@@ -8,7 +9,7 @@ public class MovieList {
 		ArrayList<Movie> movies = new ArrayList<Movie>();
 		int userChoice = 0;
 		
-		//Filling ArrayList alphabetically
+		/*//Filling ArrayList alphabetically
 		boolean added = false;
 		for(int m = 1; m < 101; m++){
 			for(int i=0; i < movies.size(); i++){
@@ -23,7 +24,14 @@ public class MovieList {
 			if(!added)
 				movies.add(MovieIO.getMovie(m));
 			added = false;
-		}
+		}*/
+		
+		//adds movies from MovieIO to my arraylist
+		for(int i = 1; i < 101; i++)
+			movies.add(MovieIO.getMovie(i));
+		//sorts my arraylist of movies alphabetically thanks to an overridden compareTo in Movie!!!
+		Collections.sort(movies);
+		
 		
 		System.out.println("Welcome to the Movie List Application!");
 		System.out.println("\nThere are "+movies.size()+" in this list.");
@@ -59,5 +67,4 @@ public class MovieList {
 		
 		sc.close();
 	}
-
 }

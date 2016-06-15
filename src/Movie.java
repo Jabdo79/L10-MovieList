@@ -1,5 +1,5 @@
 
-public class Movie {
+public class Movie implements Comparable<Movie> {
 	private String title = "", category = "";
 	private int categoryNum = 0;
 	
@@ -38,6 +38,10 @@ public class Movie {
 	
 	public static String getCategoryMenu(){
 		return "\nCategories\n1. Animated\n2. Drama\n3. Horror\n4. Sci-Fi\n";
+	}
+
+	public int compareTo(Movie other) {
+		return getTitle().compareToIgnoreCase(other.getTitle());
 	}
 	
 }
