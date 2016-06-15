@@ -8,18 +8,22 @@ public class MovieList {
 		ArrayList<Movie> movies = new ArrayList<Movie>();
 		int userChoice = 0;
 		
-		//Filling ArrayList
-		Movie userMovie;
-		movies.add(userMovie = new Movie("Titanic","drama"));
-		movies.add(userMovie = new Movie("Aliens","horror"));
-		movies.add(userMovie = new Movie("Up","animated"));
-		movies.add(userMovie = new Movie("Frozen","animated"));
-		movies.add(userMovie = new Movie("Gamer","scifi"));
-		movies.add(userMovie = new Movie("Tron","scifi"));
-		movies.add(userMovie = new Movie("The Notebook","drama"));
-		movies.add(userMovie = new Movie("The Time Traveler's Wife","drama"));
-		movies.add(userMovie = new Movie("American Beauty","drama"));
-		movies.add(userMovie = new Movie("Friday the 13th","horror"));
+		//Filling ArrayList alphabetically
+		boolean added = false;
+		for(int m = 1; m < 101; m++){
+			for(int i=0; i < movies.size(); i++){
+				//look for alphabetical location
+				if(movies.get(i).getTitle().compareTo(MovieIO.getMovie(m).getTitle()) >= 0){
+					//add movie
+					movies.add(i, MovieIO.getMovie(m));
+					added = true;
+					break;
+				}
+			}
+			if(!added)
+				movies.add(MovieIO.getMovie(m));
+			added = false;
+		}
 		
 		System.out.println("Welcome to the Movie List Application!");
 		System.out.println("\nThere are "+movies.size()+" in this list.");
