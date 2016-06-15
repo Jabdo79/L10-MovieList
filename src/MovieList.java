@@ -30,6 +30,7 @@ public class MovieList {
 		
 		boolean cont = true;
 		while(cont){
+			//ask user to pick a category
 			String menu = Movie.getCategoryMenu();
 			userChoice = InputCheck.getInt(sc, menu+"What category are you interested in? ", 1, 4);
 			switch(userChoice){
@@ -47,7 +48,7 @@ public class MovieList {
 				break;
 			}
 			
-			
+			//check each movie in the arraylist, every movie's category that matches the user's selection will be printed
 			for(int i=0; i<movies.size(); i++){
 				if(movies.get(i).getCategoryNum() == userChoice)
 					System.out.println(movies.get(i).getTitle());
