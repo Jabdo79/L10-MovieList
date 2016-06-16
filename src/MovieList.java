@@ -1,3 +1,9 @@
+/*Jonathan Abdo
+ * Create an app that creates a list of movie objects, sorts
+ * them alphabetically, and prints a list of movies by category
+ * 
+ * (uses InputCheck.java https://github.com/Jabdo79/InputCheck)
+ */
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
