@@ -18,9 +18,9 @@ public class MovieList {
 		//adds movies from MovieIO to my arraylist
 		for(int i = 1; i < 101; i++)
 			movies.add(MovieIO.getMovie(i));
+		
 		//sorts my arraylist of movies alphabetically thanks to an overridden compareTo in Movie!!!
 		Collections.sort(movies);
-		
 		
 		System.out.println("Welcome to the Movie List Application!");
 		System.out.println("\nThere are "+movies.size()+" in this list.");
