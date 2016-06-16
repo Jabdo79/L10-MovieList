@@ -15,23 +15,6 @@ public class MovieList {
 		ArrayList<Movie> movies = new ArrayList<Movie>();
 		int userChoice = 0;
 		
-		/*//Filling ArrayList alphabetically
-		boolean added = false;
-		for(int m = 1; m < 101; m++){
-			for(int i=0; i < movies.size(); i++){
-				//look for alphabetical location
-				if(movies.get(i).getTitle().compareTo(MovieIO.getMovie(m).getTitle()) >= 0){
-					//add movie
-					movies.add(i, MovieIO.getMovie(m));
-					added = true;
-					break;
-				}
-			}
-			if(!added)
-				movies.add(MovieIO.getMovie(m));
-			added = false;
-		}*/
-		
 		//adds movies from MovieIO to my arraylist
 		for(int i = 1; i < 101; i++)
 			movies.add(MovieIO.getMovie(i));
